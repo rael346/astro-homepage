@@ -1,25 +1,41 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../config';
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const meta = {
+  title: "Duy Tran - Student Dev",
+  description: `Duy Tran's Personal Website`,
+  url: "https://duytran.me",
+  image: "",
+  type: "website",
+};
+
+const { title } = Astro.props;
 ---
 
-<header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
-	</nav>
-</header>
-<style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
-</style>
+<head>
+  <title>{title}</title>
+
+  <!-- Global Metadata -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content={"My personal site"} />
+  <meta name="description" content="Duy Tran's homepage" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={meta.type} />
+  <meta property="og:description" content={meta.description} />
+  <meta property="og:title" content={meta.title} />
+  <meta property="og:image" content={meta.image} />
+  <meta property="og:url" content={Astro.url} />
+</head>
