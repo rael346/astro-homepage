@@ -1,0 +1,22 @@
+---
+import NavLink from "./NavLink.astro";
+---
+
+<header>
+  <nav
+    class="sticky top-0 flex items-center justify-center w-full py-2 bg-slate-100 bg-opacity-40 backdrop-blur-sm shadow-sm dark:bg-slate-800 dark:bg-opacity-40 dark:backdrop-blur-sm z-10"
+  >
+    <div class="flex justify-between items-center max-w-2xl w-full px-4">
+      <div class="flex items-center space-x-2">
+        <a href="/" class="font-semibold text-xl mr-4">Duy Tran</a>
+        <NavLink href="/about">About Me</NavLink>
+        <NavLink href="/blog">Blog</NavLink>
+        <NavLink href="/projects">Projects</NavLink>
+        <NavLink href="/resources">Resources</NavLink>
+        <NavLink href="https://github.com/withastro/astro" target="_blank">
+          GitHub
+        </NavLink>
+      </div>
+    </div>
+  </nav>
+</header>
