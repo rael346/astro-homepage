@@ -28,7 +28,7 @@ const ThemeToggle = () => {
   return (
     <button
       type="button"
-      class="w-9 h-9 flex items-center justify-center rounded-md bg-slate-300 hover:ring-2 ring-gray-400 dark:bg-slate-700 dark:ring-slate-500 transition"
+      class="w-9 h-9 z-50 flex items-center justify-center rounded-md bg-slate-300 hover:ring-2 ring-gray-400 dark:bg-slate-700 dark:ring-slate-500 transition"
       onClick={handleClick}
     >
       {theme() === "dark" ? <SunIcon fill="#FFFFFF" /> : <MoonIcon />}

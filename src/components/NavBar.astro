@@ -1,6 +1,14 @@
 ---
+import MobileMenu from "./MobileMenu";
 import NavLink from "./NavLink.astro";
 import ThemeToggle from "./ThemeToggle";
+
+const links = [
+  { name: "About Me", href: "/about" },
+  { name: "Blog", href: "/blog" },
+  { name: "Projects", href: "/projects" },
+  { name: "Resources", href: "/resources" },
+];
 ---
 
 <header>
@@ -9,18 +17,13 @@ import ThemeToggle from "./ThemeToggle";
   >
     <div class="flex justify-between items-center max-w-2xl w-full px-4">
       <div class="flex items-center space-x-2">
-        <a href="/" class="font-semibold text-xl mr-4">Duy Tran</a>
-        <NavLink href="/about">About Me</NavLink>
-        <NavLink href="/blog">Blog</NavLink>
-        <NavLink href="/projects">Projects</NavLink>
-        <NavLink href="/resources">Resources</NavLink>
-        <NavLink href="https://github.com/withastro/astro" target="_blank">
-          GitHub
-        </NavLink>
+        <a href="/" class="font-semibold text-xl mr-4 z-50">Duy Tran</a>
+        {links.map(({ name, href }) => <NavLink href={href}>{name}</NavLink>)}
       </div>
 
-      <div class="flex space-x-4">
+      <div class="flex">
         <ThemeToggle client:visible />
+        <MobileMenu client:visible />
       </div>
     </div>
   </nav>
