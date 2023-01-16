@@ -40,11 +40,7 @@ const MobileMenu = () => {
         `}
       >
         {links.map(({ name, href }) => (
-          <a
-            class="font-semibold text-lg py-4"
-            onClick={() => setIsOpen(false)}
-            href={href}
-          >
+          <a class="font-semibold text-lg py-4" href={href}>
             {name}
           </a>
         ))}
