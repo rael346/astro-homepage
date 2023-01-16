@@ -35,7 +35,7 @@ const MobileMenu = () => {
           fixed h-screen w-screen z-10 top-0 left-0 py-16 px-8 visible md:hidden flex flex-col 
           bg-slate-100 bg-opacity-90 divide-slate-400 
           dark:bg-slate-800 dark:bg-opacity-90 dark:divide-slate-600 
-          ease-in-out duration-300
+          transition-transform duration-300
           divide-y
         `}
       >
