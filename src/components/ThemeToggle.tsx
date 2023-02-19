@@ -13,10 +13,11 @@ const ThemeToggle = () => {
   };
 
   createEffect(() => {
+    const root = document.documentElement;
     if (theme() === "dark") {
-      document.documentElement.classList.add("dark");
+      root.classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      root.classList.remove("dark");
     }
     localStorage.setItem("theme", theme());
   });
